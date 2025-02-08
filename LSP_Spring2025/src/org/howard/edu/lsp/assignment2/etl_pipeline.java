@@ -2,8 +2,8 @@ package org.howard.edu.lsp.assignment2;
 import java.io.*;
 
 public class etl_pipeline {
-	public static void main(String[] args) {
-		try {
+	public static void main(String[] args) throws IOException {
+		
 		BufferedReader reader = new BufferedReader(new FileReader("data/products.csv"));
 		BufferedWriter writer = new BufferedWriter(new FileWriter("data/transformed_products.csv"));
 		
@@ -16,6 +16,10 @@ public class etl_pipeline {
 		
 		String record = reader.readLine();
 		while(record != null) {
+			if (record.isEmpty()){
+				record = reader.readLine();
+				continue;
+			}
 			String[] info = record.split(",");
 			
 			int productId = Integer.parseInt(info[0]);
@@ -47,18 +51,13 @@ public class etl_pipeline {
 				}
 			
 			//write modified data to new file
-			writer.write(String.format("%d,%s,%.2f,%s,%s/n", productId, name, price, category, pR));
+			writer.write(String.format("%d,%s,%.2f,%s,%s\n", productId, name, price, category, pR));
+			record = reader.readLine();
 			}
 			
 		reader.close();
 		writer.close();
 			
-		}catch (IOException exc){
-			System.out.println("Error: File does not seem to exist.");
-		
-		
-		}
-	 
 
 	}
 }
