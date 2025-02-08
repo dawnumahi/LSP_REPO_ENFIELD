@@ -13,7 +13,6 @@ public class etl_pipeline {
 		//Ignore column header
 		reader.readLine();
 		
-		
 		String record = reader.readLine();
 		while(record != null) {
 			if (record.isEmpty()){
@@ -33,7 +32,6 @@ public class etl_pipeline {
 				if (price > 500.00) {
 					category = "Premium Electronics";
 				}
-				
 			}
 			
 			String pR;
@@ -48,7 +46,7 @@ public class etl_pipeline {
 			}
 			else {
 				pR = "Premium";
-				}
+			}
 			
 			//write modified data to new file
 			writer.write(String.format("%d,%s,%.2f,%s,%s\n", productId, name, price, category, pR));
@@ -57,7 +55,5 @@ public class etl_pipeline {
 			
 		reader.close();
 		writer.close();
-			
-
 	}
 }
