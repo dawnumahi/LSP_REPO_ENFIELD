@@ -4,8 +4,8 @@ import java.io.*;
 public class etl_pipeline {
 	public static void main(String[] args) throws IOException {
 		
-		BufferedReader reader = new BufferedReader(new FileReader("data/products.csv"));
-		BufferedWriter writer = new BufferedWriter(new FileWriter("data/transformed_products.csv"));
+		BufferedReader reader = new BufferedReader(new FileReader("LSP_Spring2025/data/products.csv"));
+		BufferedWriter writer = new BufferedWriter(new FileWriter("LSP_Spring2025/data/transformed_products.csv"));
 		
 		//write header for output file
 		writer.write("ProductID,Name,Price,Category,PriceRange");
