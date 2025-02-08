@@ -1,5 +1,64 @@
 package org.howard.edu.lsp.assignment2;
+import java.io.*;
 
 public class etl_pipeline {
+	public static void main(String[] args) {
+		try {
+		BufferedReader reader = new BufferedReader(new FileReader("data/products.csv"));
+		BufferedWriter writer = new BufferedWriter(new FileWriter("data/transformed_products.csv"));
+		
+		//write header for output file
+		writer.write("ProductID,Name,Price,Category,PriceRange");
+		
+		//Ignore column header
+		reader.readLine();
+		
+		
+		String record = reader.readLine();
+		while(record != null) {
+			String[] info = record.split(",");
+			
+			int productId = Integer.parseInt(info[0]);
+			String name = info[1].toUpperCase(); 		//convert all product names to uppercase 
+			double price = Double.parseDouble(info[2]);
+			String category = info[3];
+			
+			//10% discount on electronics 
+			if (category.equals("Electronics")){
+				price = Math.round(0.9*price * 100)/100 ;
+				if (price > 500.00) {
+					category = "Premium Electronics";
+				}
+				
+			}
+			
+			String pR;
+			if ((0 < price) && (price <= 10)){
+				pR = "Low";
+			}
+			else if (price <= 100){
+				pR = "Medium";
+			}
+			else if (price <= 500){
+				pR = "High";
+			}
+			else {
+				pR = "Premium";
+				}
+			
+			//write modified data to new file
+			writer.write(String.format("%d,%s,%.2f,%s,%s/n", productId, name, price, category, pR));
+			}
+			
+		reader.close();
+		writer.close();
+			
+		}catch (IOException exc){
+			System.out.println("Error: File does not seem to exist.");
+		
+		
+		}
+	 
 
+	}
 }
