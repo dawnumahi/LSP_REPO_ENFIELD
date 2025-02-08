@@ -6,9 +6,9 @@ public class etl_pipeline {
 		
 		BufferedReader reader = new BufferedReader(new FileReader("LSP_Spring2025/data/products.csv"));
 		BufferedWriter writer = new BufferedWriter(new FileWriter("LSP_Spring2025/data/transformed_products.csv"));
-		
+			
 		//write header for output file
-		writer.write("ProductID,Name,Price,Category,PriceRange");
+		writer.write("ProductID,Name,Price,Category,PriceRange\n");
 		
 		//Ignore column header
 		reader.readLine();
@@ -28,7 +28,7 @@ public class etl_pipeline {
 			
 			//10% discount on electronics 
 			if (category.equals("Electronics")){
-				price = Math.round(0.9*price * 100)/100 ;
+				price = (0.9*price);
 				if (price > 500.00) {
 					category = "Premium Electronics";
 				}
