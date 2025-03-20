@@ -8,6 +8,6 @@ public class BookDriver {
         System.out.println(book1.equals(book2)); // true
         System.out.println(book1.equals(book3)); // false
         System.out.println(book1); // Output: Title: The Great Gatsby, Author: F. Scott Fitzgerald, ISBN: 123456789, Year Published: 1925
-
+        
     }
 }
