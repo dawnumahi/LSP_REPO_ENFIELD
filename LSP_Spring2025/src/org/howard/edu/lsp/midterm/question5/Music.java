@@ -15,6 +15,14 @@ public class Music implements StreamingService{
         }
 
         public void pause(){
-            System.out.println("Playing music: " + title);
+            System.out.println("Pausing music: " + title);
         }  
+
+        public void stop(){
+            System.out.println("Stopping music: " + title);
+        }
+
+        public void addToPlaylist(String playlistName){
+            System.out.println("Added " + title + "to " + playlistName + ".");
+        }
 }
