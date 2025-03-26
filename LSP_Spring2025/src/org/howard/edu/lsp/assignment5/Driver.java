@@ -50,7 +50,7 @@ public class Driver {
         //Contains
         System.out.println("Does Set 1 contain 2? " + set1.contains(2));
         System.out.println("Does Set 1 contain 5? " + set1.contains(5));
-        System.out.println("Does Set 2 contain 9? " + set1.contains(9));
+        System.out.println("Does Set 2 contain 9? " + set2.contains(9));
 
         //Intersect
         System.out.println("Intersection of Set 1 and Set 2");
@@ -75,8 +75,13 @@ public class Driver {
         // Testing isEmpty
         System.out.println("Is Set1 empty? " + set1.isEmpty());
 
-        // Test equals 
+        // Testing equals 
         System.out.println("Does Set 1 equal Set 2? " + set1.equals(set2));
+
+        //Testing diff
+        System.out.println("Difference of Set 1 and Set 2");
+        set1.diff(set2);  // Set 1 - Set 2
+        System.out.println("Set 1 after difference: " + set1);
 
         //Union and toString
         System.out.println("Union of Set 1 and Set 2");
@@ -84,7 +89,19 @@ public class Driver {
         System.out.println("Value of Set 2 is:" + set2.toString());
         set1.union(set2);	// union of set1 and set2
         System.out.println("Result of union of Set 1 and Set 2: " +  set1.toString());
-       	
 
+        System.out.println("Value of Set 1 is:" + set1.toString());
+        System.out.println("Value of Set 2 is:" + set2.toString());
+       	
+        System.out.println("Adding 8, 9, 10, 11 to Set 2...");
+        set2.add(8);
+        set2.add(9);
+        set2.add(10);
+        set2.add(11);
+
+        // Testing complement 
+        System.out.println("Elements in set 2 but not in set 1");
+        set1.complement(set2); 
+        System.out.println("Set 1 after complement: " + set1);
     }
 }
