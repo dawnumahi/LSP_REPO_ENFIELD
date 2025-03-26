@@ -3,15 +3,27 @@ package org.howard.edu.lsp.assignment5;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The IntegerSet class represents a set of integers and provides set operations.
+ * The set does not allow duplicates.
+ */
 public class IntegerSet {
     // Store the set elements in an ArrayList.
 	private List<Integer> set = new ArrayList<Integer>();
 
 	// Default Constructor
+    /**
+     * Default Constructor for initializing empty sets.
+     */
 	public IntegerSet() {
 	}
 
 	// Constructor if you want to pass in already initialized
+    /**
+     * Constructor if you want to pass in an already initialized set.
+     * 
+     * @param set The set of integers being passed.
+     */
 	public IntegerSet(ArrayList<Integer> set) {
 		this.set = set;
 	}
@@ -42,7 +54,7 @@ public class IntegerSet {
     /** 
      * Returns true if two sets are equal meaning they contain all of the same values in ANY order.
      * This overrides the equal method from the Object class.
-     * @param o
+     * @param o the object being checked for equality to the set.
      * @return true if the 2 sets are equal, false otherwise. 
      * Two sets 
      */
@@ -59,6 +71,7 @@ public class IntegerSet {
 
     // Returns true if the set contains the value, otherwise false. 5 pts.
     /**
+     * Returns true if the set contains the value, otherwise false.
      * 
      * @param value the integer to check for within the set.
      * @return true if the value is in the set, false otherwise.

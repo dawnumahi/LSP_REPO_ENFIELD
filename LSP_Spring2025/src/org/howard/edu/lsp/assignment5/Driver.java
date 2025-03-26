@@ -1,6 +1,14 @@
 package org.howard.edu.lsp.assignment5;
-
+ /**
+ * Driver class to test the methods of the IntegerSet class.
+ * 
+ */
 public class Driver {
+    /**
+     * Main method to test IntegerSet operations.
+     * 
+     * @param args Command line arguments (not used).
+     */
     public static void main(String[] args){
         IntegerSet set1 = new IntegerSet();
         set1.add(1);
