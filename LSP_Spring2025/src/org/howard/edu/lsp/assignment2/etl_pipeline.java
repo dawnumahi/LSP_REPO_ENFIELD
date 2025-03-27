@@ -33,7 +33,7 @@ public class etl_pipeline {
 					category = "Premium Electronics";
 				}
 			}
-			
+	
 			String pR;
 			if ((0 < price) && (price <= 10)){
 				pR = "Low";
@@ -52,7 +52,8 @@ public class etl_pipeline {
 			writer.write(String.format("%d,%s,%.2f,%s,%s\n", productId, name, price, category, pR));
 			record = reader.readLine();
 			}
-			
+
+			//Ignore this comment.
 		reader.close();
 		writer.close();
 	}
