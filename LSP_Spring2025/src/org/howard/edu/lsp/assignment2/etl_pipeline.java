@@ -53,7 +53,7 @@ public class etl_pipeline {
 			record = reader.readLine();
 			}
 
-			//Ignore this comment.
+			//Ignore the comment.
 			
 		reader.close();
 		writer.close();
