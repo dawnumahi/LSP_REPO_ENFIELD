@@ -1,4 +1,4 @@
-package org.howard.edu.lspfinal.question1;
+package org.howard.edu.lspfinal.question1; 
 import java.util.HashMap;
 import java.util.Map;
 
@@ -13,8 +13,8 @@ public class ShoppingCart {
     /**
      * Adds an item to the shopping cart.
      * 
-     * @param itemName  the name of the item
-     * @param price     the price of the item (must be non-negative)
+     * @param itemName the name of the item
+     * @param price    the price of the item (must be non-negative)
      * @throws IllegalArgumentException if price is negative
      */
     public void addItem(String itemName, double price) {
@@ -45,7 +45,7 @@ public class ShoppingCart {
      * - "SAVE10": 10% discount
      * - "SAVE20": 20% discount
      * 
-     * @param code  the discount code
+     * @param code the discount code
      * @throws IllegalArgumentException if the code is invalid
      */
     public void applyDiscountCode(String code) {
@@ -69,5 +69,27 @@ public class ShoppingCart {
      */
     public double getDiscountPercentage() {
         return discountPercentage;
+    }
+
+    /**
+     * Returns the number of items in the cart
+     * 
+     * @return number of items
+     */
+    public int getItemCount() {
+        return items.size();
+    }
+
+    /**
+     * Removes an item from the cart
+     * 
+     * @param itemName the name of the item to remove
+     * @throws IllegalArgumentException if item doesn't exist
+     */
+    public void removeItem(String itemName) {
+        if (!items.containsKey(itemName)) {
+            throw new IllegalArgumentException("Item not found in cart.");
+        }
+        items.remove(itemName);
     }
 }
