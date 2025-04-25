@@ -95,6 +95,5 @@ class ShoppingCartTest {
 
     //Source: https://junit.org/junit5/docs/current/user-guide/#writing-tests-assertions
     //Source: https://junit.org/junit5/docs/current/user-guide/#writing-tests-exceptions
-    //Source: 
 }
 
