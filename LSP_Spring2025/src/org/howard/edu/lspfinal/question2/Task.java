@@ -35,4 +35,11 @@ public class Task {
         this.status = s;
     }
 
+    /**
+     * toString method for Tasks.
+     */
+    @Override
+    public String toString() {
+        return "Task :" + taskName + ", Priority= " + priority + ", Status " + status ;
+    }
 }

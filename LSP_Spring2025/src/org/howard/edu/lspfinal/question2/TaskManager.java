@@ -16,7 +16,7 @@ public class TaskManager {
      */
     public void addTask(String n, int p, String s) throws DuplicateTaskException{
         if(tasks.containsKey(n)){
-            throw new DuplicateTaskException("Task '" + n + "' already exists.");
+            throw new DuplicateTaskException("Task " + n + " already exists.");
         }
         tasks.put(n, new Task(n, p, s));
     }
@@ -27,10 +27,10 @@ public class TaskManager {
      * @return Returns the task.
      * @throws TaskNotFoundException
      */
-    public Task retrieveTask(String n) throws TaskNotFoundException{
+    public Task getTaskByName(String n) throws TaskNotFoundException{
         Task t = tasks.get(n);
         if (t == null){
-            throw new TaskNotFoundException( " " + n + "' not found.");
+            throw new TaskNotFoundException( " " + n + " not found.");
         }
         return t;
     }
@@ -42,7 +42,7 @@ public class TaskManager {
      * @throws TaskNotFoundException
      */
     public void updateStatus(String n, String updatedStatus) throws TaskNotFoundException{
-        Task t = retrieveTask(n);
+        Task t = getTaskByName(n);
         t.setStatus(updatedStatus);
     }
 
